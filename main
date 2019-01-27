@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+class Point
+{    int x,y;
+public :
+    Point(int a,int b){x=a;y=b;}
+    friend void distance(Point p,Point q);
+ };
+void distance(Point p,Point q)
+{int r=((p.x-q.x)*(p.x-q.x))+((p.y-q.y)*(p.y-q.y));
+ cout<<"Distance between two points is:"<<sqrt(r); 
+ }
+int main() {
+     int s,t,u,v;
+    cout<<"Enter the coordinates of first point\n";
+    cin>>s>>t;
+    
+    cout<<"Enter the coordinates of second point\n";
+    cin>>u>>v;
+    Point A(s,t),B(u,v);
+    distance(A,B);
+     return 0;
+}
